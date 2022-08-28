@@ -6,28 +6,40 @@ public class EmployeeWageComputation {
 
 	public static void main(String[] args) {
 
-		System.out.println("Welcome to Employee Wage Computation");
+		System.out.println("Welcome to Employee Wage Computation Program");
 
-		int num = 1;
-		Random random = new Random();
+		int wage = 0;
+		int empHour = 0;
+		int empWagePerHour = 20;
+		final byte fullTime = 1;
+		final byte partTime = 2;
 
-		int empType = random.nextInt(3);
+		Random rn = new Random();
+
+		int empType = rn.nextInt(3);
 
 		System.out.println(empType);
 
-		if (empType < num) {
+		switch (empType) {
+		case fullTime:
+			empHour = 8;
+			wage = empWagePerHour * empHour;
+			System.out.println("Daily wage of employee is " + wage);
+			break;
 
-			System.out.println("Employee is absent");
-		} else if (empType == num) {
+		case partTime:
+			empHour = 4;
+			wage = empWagePerHour * empHour;
+			System.out.println("Daily wage of employee is " + wage);
+			break;
 
-			System.out.println("Employee is present");
-		} else {
-			System.out.println("Employee is partime");
+		case 0:
+			wage = 0;
+			System.out.println("Daily wage of employee is " + wage);
+			break;
 
-			int wagePerHour = 20;
-			int fullDayHour = 4;
-
-			System.out.println("dailyEmployeeWage" + " is " + wagePerHour * fullDayHour);
+		default:
+			System.out.println("No employee data");
 		}
 	}
 }
