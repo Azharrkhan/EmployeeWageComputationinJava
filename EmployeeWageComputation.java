@@ -11,6 +11,7 @@ public class EmployeeWageComputation {
 		int wage = 0;
 		int empHour = 0;
 		int empWagePerHour = 20;
+		int noOfDays = 20;
 		final byte fullTime = 1;
 		final byte partTime = 2;
 
@@ -23,23 +24,20 @@ public class EmployeeWageComputation {
 		switch (empType) {
 		case fullTime:
 			empHour = 8;
-			wage = empWagePerHour * empHour;
-			System.out.println("Daily wage of employee is " + wage);
+			wage = empWagePerHour * empHour * noOfDays;
+			System.out.println("Monthly wage of present employee is " + wage);
 			break;
 
 		case partTime:
 			empHour = 4;
-			wage = empWagePerHour * empHour;
-			System.out.println("Daily wage of employee is " + wage);
-			break;
-
-		case 0:
-			wage = 0;
-			System.out.println("Daily wage of employee is " + wage);
+			wage = empWagePerHour * empHour * noOfDays;
+			System.out.println("Monthly wage of part time employee is " + wage);
 			break;
 
 		default:
-			System.out.println("No employee data");
+			wage = 0;
+			System.out.println("Monthly wage of absent employee is " + wage);
+			break;
 		}
 	}
 }
