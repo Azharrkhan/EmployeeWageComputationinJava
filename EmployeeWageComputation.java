@@ -8,7 +8,10 @@ public class EmployeeWageComputation {
 			
 			System.out.println("Welcome to Employee Wage Computation Program");
 			
-			int num = 1; 
+			int num = 1;
+			int wagePerHour = 20;
+			int fullDayHour = 8;
+			int dailyEmployeeWage;
 			
 			Random rn = new Random();
 			
@@ -19,13 +22,16 @@ public class EmployeeWageComputation {
 			if (empType == num) {
 				
 				System.out.println("Employee is present");
+					
+				dailyEmployeeWage = wagePerHour * fullDayHour;
+				
+				System.out.println("Employee daily wage " + dailyEmployeeWage);
 			}
 			else {
 					
 				System.out.println("Employee is absent");
 				}
 		}	
-	
 		}
 
 
